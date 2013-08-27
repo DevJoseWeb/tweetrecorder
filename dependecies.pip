@@ -1,0 +1,4 @@
+simplejson==3.3.0
+tweepy==2.1
+virtualenv==1.10.1
+wsgiref==0.1.2
