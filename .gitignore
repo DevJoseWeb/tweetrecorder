@@ -1,0 +1,8 @@
+*.pyc
+*~
+db.sqlite3
+local_settings.py
+lib/
+bin/
+include/
+.Python
