@@ -3,9 +3,9 @@ tweetrecorder
 
 SIMPLE REAL TIME TWEET RECORDER
 
-- Create a copy of settings_SAMPLE.py and name it settings.py
+- Create a copy of local_settings.py.SAMPLE and name it local_settings.py
 - Define your Twitter OAuth Credentials
-- Define your keyword search list
+- Install REDIS (http://redis.io)
 
 - Setup your virtualenv:
 
@@ -16,7 +16,10 @@ SIMPLE REAL TIME TWEET RECORDER
 
 > pip install -r dependencies.pip
 
+
 Run the grabber
 
-> python recorder.py > dump.txt
+> redis-server
+> celery -A grabber worker
+> python manage.py.tweetrecorder
 
