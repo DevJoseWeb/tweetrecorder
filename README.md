@@ -20,6 +20,8 @@ SIMPLE REAL TIME TWEET RECORDER
 Run the grabber
 
 > redis-server
+
 > celery -A grabber worker
+
 > python manage.py.tweetrecorder
 
