@@ -12,9 +12,15 @@ LOGGER = logging.getLogger("grabber")
 @shared_task
 def persist_tweet(tweet):
     try:
-        Tweet.objects.create(id_str = tweet["id_str"],
-                            author = tweet["user"]["screen_name"], 
-                            text = tweet["text"])
-        LOGGER.info("Tweet %s from %s recorded" % (tweet["id_str"], tweet["user"]["screen_name"]))
+        id_str = tweet["id_str"]
+        author = tweet["user"]["screen_name"]
+        text = tweet["text"]
+
+        Tweet.objects.create(id_str = id_str,
+                            author = author, 
+                            text = text)
+    
+        LOGGER.info("Tweet %s from %s recorded" % (id_str, author))
+    
     except Exception, e:
         LOGGER.exception(e)
